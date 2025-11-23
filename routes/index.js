@@ -1,6 +1,6 @@
 import express from "express";
-import Affirmation from "../models/Affirmation.js";
-import Quote from "../models/Quote.js";
+import Affirmation from "../db/models/Affirmation.js";
+import Quote from "../db/models/Quote.js";
 
 const router = express.Router();
 

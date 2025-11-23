@@ -1,9 +1,13 @@
 import express from "express";
-import routes from "./routes/index.js";
 import { connectDB } from "./db/client.js";
 
-import Affirmation from "./models/Affirmation.js";
-import Quote from "./models/Quote.js";
+import Affirmation from "./db/models/Affirmation.js";
+import Quote from "./db/models/Quote.js";
+import router from "./routes/index.js";
+import authRoutes from "./routes/auth.routes.js";
+import todoRoutes from "./routes/todo.routes.js";
+import journalRoutes from "./routes/journal.routes.js";
+
 
 const app = express();
 const PORT = 3000;
@@ -11,7 +15,12 @@ const PORT = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api", routes);
+app.use("/api/auth", authRoutes);
+app.use("/api", router);
+app.use("/api", todoRoutes)
+app.use("/api", journalRoutes)
+
+
 
 // -------------------- SEED DATA --------------------
 const affirmations = [
