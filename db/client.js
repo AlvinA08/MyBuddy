@@ -10,7 +10,7 @@ const mongoOptions = {
   heartbeatFrequencyMS: 10000,
 };
 
-const mongoURI = "mongodb://fems:password@localhost:27017/mybuddy?authSource=admin";
+const mongoURI = "mongodb+srv://akuwudikealvin_db_user:buddyapp@buddy.9ywctr9.mongodb.net/?appName=Buddy";
 
 export const connectDB = async () => {
   try {
